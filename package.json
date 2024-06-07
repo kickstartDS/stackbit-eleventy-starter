@@ -1,27 +1,31 @@
 {
-    "name": "stackbit-nextjs-starter",
+    "name": "stackbit-eleventy-starter",
     "version": "0.2.0",
-    "repository": "https://github.com/stackbit-themes/nextjs-starter",
+    "repository": "https://github.com/kickstartDS/stackbit-eleventy-starter",
     "license": "MIT",
     "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "export": "next export",
-        "start": "next start",
-        "lint": "next lint"
+        "build": "npx @11ty/eleventy",
+        "start": "concurrently --raw \"npm:start:*\"",
+        "start:11ty": "npx @11ty/eleventy --serve --incremental",
+        "start:stackbit": "npx stackbit dev"
     },
     "dependencies": {
         "front-matter": "^4.0.2",
-        "glob": "^8.0.3",
-        "markdown-to-jsx": "^7.2.1",
-        "next": "^13.4.4",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "glob": "^10.4.1",
+        "markdown-to-jsx": "^7.4.7",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
     },
     "devDependencies": {
-        "@stackbit/cms-git": "^0.3.5",
-        "@stackbit/types": "^0.7.2",
-        "eslint": "^8.42.0",
-        "eslint-config-next": "^13.4.4"
+        "@11ty/eleventy": "^2.0.1",
+        "@kickstartds/eleventy-plugin-kickstartds": "^0.0.7",
+        "@stackbit/cli": "^0.3.85",
+        "@stackbit/cms-git": "^1.0.1",
+        "@stackbit/types": "^2.0.1",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "concurrently": "^8.2.2",
+        "patch-package": "^8.0.0",
+        "typescript": "^5.4.5"
     }
 }

@@ -1,0 +1,13 @@
+diff --git a/node_modules/@11ty/eleventy-dev-server/client/reload-client.js b/node_modules/@11ty/eleventy-dev-server/client/reload-client.js
+index 1763411..0dc30d2 100644
+--- a/node_modules/@11ty/eleventy-dev-server/client/reload-client.js
++++ b/node_modules/@11ty/eleventy-dev-server/client/reload-client.js
+@@ -111,7 +111,7 @@ class EleventyReload {
+     // works with http (ws) and https (wss)
+     let websocketProtocol = protocol.replace("http", "ws");
+ 
+-    let socket = new WebSocket(`${websocketProtocol}//${host}`);
++    let socket = new WebSocket(`${websocketProtocol}//${host}/.11ty`);
+ 
+     socket.addEventListener("message", async (event) => {
+       try {

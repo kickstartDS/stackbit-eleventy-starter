@@ -10,8 +10,19 @@ import { SiteConfig } from './.stackbit/models/SiteConfig';
 
 export default sbConfig = {
     stackbitVersion: '~0.6.0',
-    ssgName: 'nextjs',
-    nodeVersion: '16',
+    ssgName: 'custom',
+    devCommand: 'npx @11ty/eleventy --serve --port={PORT} --incremental',
+    experimental: {
+        ssg: {
+            name: 'eleventy',
+            passthrough: ['/.11ty/**'],
+            logPatterns: {
+                up: ['[11ty] Server at']
+            }
+        }
+    },
+    customContentReload: true,
+    nodeVersion: '20',
     contentSources: [
         new GitContentSource({
             rootPath: __dirname,
@@ -20,9 +31,9 @@ export default sbConfig = {
             assetsConfig: {
                 referenceType: 'static',
                 staticDir: 'public',
-                uploadDir: 'images',
+                uploadDir: 'assets',
                 publicPath: '/'
             }
         })
-    ]
+    ],
 };

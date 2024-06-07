@@ -1,12 +1,12 @@
 ---
 type: Page
-title: Stackbit Next.js Starter
+title: Stackbit Eleventy Starter
 sections:
   - type: HeroSection
     heading: Welcome to Stackbit!
     subheading: >
       You've just [unlocked visual editing
-      capabilities](https://www.stackbit.com/) in this Next.js app.
+      capabilities](https://www.stackbit.com/) in this Eleventy app.
     buttons:
       - label: Start Building
         url: 'https://docs.stackbit.com/getting-started/'

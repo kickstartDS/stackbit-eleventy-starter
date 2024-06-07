@@ -1,10 +1,8 @@
-import * as React from 'react';
-import Link from 'next/link';
 import Markdown from 'markdown-to-jsx';
 
 export const Card = (props) => {
     return (
-        <Link href={props.url ?? '/'} className="card" data-sb-field-path={props['data-sb-field-path']}>
+        <a href={props.url ?? '/'} className="card" data-sb-field-path={props['data-sb-field-path']}>
             {props.heading && (
                 <h3 className="card-heading" data-sb-field-path=".heading">
                     {props.heading}
@@ -15,6 +13,6 @@ export const Card = (props) => {
                     {props.subheading}
                 </Markdown>
             )}
-        </Link>
+        </a>
     );
 };
